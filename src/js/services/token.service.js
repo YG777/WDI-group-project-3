@@ -2,8 +2,8 @@ angular
   .module('group-proj')
   .service('TokenService', TokenService);
 
-TokenService.$inject =['$window'];
-function TokenService($window) {
+TokenService.$inject =['$window', 'jwtHelper'];
+function TokenService($window, jwtHelper) {
   const self = this;
 
   self.setToken = (token) => {
@@ -12,5 +12,13 @@ function TokenService($window) {
 
   self.getToken = () => {
     return $window.localStorage.getItem('auth-token');
+  };
+
+  self.decodeToken = ()=> {
+    const token = self.getToken();
+    return token ? jwtHelper.decodeToken(token): null;
+  };
+  self.removeToken = ()=> {
+    $window.localStorage.clear();
   };
 }
