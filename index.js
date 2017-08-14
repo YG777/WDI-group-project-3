@@ -7,9 +7,9 @@ const expressJWT = require('express-jwt');
 const config     = require('./config/config');
 const routes     = require('./config/routes');
 mongoose.Promise = require('bluebird');
+const dest       = `${__dirname}/public`;
+const app        = express();
 
-const dest    = `${__dirname}/public`;
-const app     = express();
 mongoose.connect(config.db);
 if (app.get('env') !== 'production') app.use(cors());
 app.use(express.static(dest));
@@ -36,3 +36,5 @@ function jwtErrorHandler(err, req, res, next) {
 }
 
 app.listen(config.port, () => console.log(`Express has started on port: ${config.port}`));
+
+module.exports = app;
