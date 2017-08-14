@@ -2,5 +2,6 @@
 <ul>
   <li ng-repeat="group in groupsIndex.all">
     <a ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
+    <button ng-click="groupsIndex.delete(group)">Delete</button>
   </li>
 </ul>

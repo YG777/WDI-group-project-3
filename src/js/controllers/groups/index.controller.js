@@ -2,13 +2,12 @@ angular
   .module('group-proj')
   .controller('GroupsIndexCtrl', GroupsIndexCtrl);
 
-GroupsIndexCtrl.$inject = ['Group'];
-function GroupsIndexCtrl(Group) {
+GroupsIndexCtrl.$inject = ['API', 'Group' ];
+function GroupsIndexCtrl(API, Group ) {
   const vm = this;
   vm.all = [];
   vm.index = index;
   vm.delete = groupDelete;
-
 
   vm.index();
   function index() {
@@ -17,13 +16,12 @@ function GroupsIndexCtrl(Group) {
     });
   }
 
-
   function groupDelete(group) {
     Group
-      .delete({ id: group._id })
+      .delete({ id: group.id })
       .$promise
       .then(() => {
-        groupDelete();
+        vm.index();
       });
   }
 }

@@ -26,6 +26,14 @@ User.create([{
     name: 'Test group',
     organization: 'GA WDI 28 Lunch!',
     members: [users[0]._id, users[1]._id]
+  },{
+    name: 'Delete group',
+    organization: 'GA WDI 28 Lunch',
+    members: [users[0]._id, users[1]._id]
+  },{
+    name: 'Delete group2',
+    organization: 'GA WDI 28 Lunch',
+    members: [users[0]._id, users[1]._id]
   }]);
 })
 .then(groups => {
