@@ -30,6 +30,24 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: '/js/views/groups/index.html',
     controller: 'GroupsIndexCtrl',
     controllerAs: 'groupsIndex'
+  })
+  .state('groupsNew', {
+    url: '/groups/new',
+    templateUrl: '/js/views/groups/new.html',
+    controller: 'GroupNewCtrl',
+    controllerAs: 'groupsNew'
+  })
+  .state('groupsShow', {
+    url: '/groups/:id',
+    templateUrl: '/js/views/groups/show.html',
+    controller: 'GroupShowCtrl',
+    controllerAs: 'groupsShow'
+  })
+  .state('groupEdit', {
+    url: '/groups/:id/edit',
+    templateUrl: '/js/views/groups/edit.html',
+    controller: 'GroupEditCtrl',
+    controllerAs: 'groupEdit'
   });
 
   $urlRouterProvider.otherwise('/');

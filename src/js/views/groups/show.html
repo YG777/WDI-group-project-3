@@ -1,0 +1,15 @@
+<h1>GroupsShow</h1>
+
+
+<h2>
+  {{groupsShow.group}}
+</h2>
+<h3>{{groupsShow.group.organization}}</h3>
+<h3>{{groupsShow.group.updatedAt}}</h3>
+<h3>{{groupsShow.group.createdAt}}</h3>
+
+<ul>
+  <li ng-repeat="member in groupsShow.group.members">{{member.name}}</li>
+</ul>
+
+<button ui-sref="">Edit</button>
