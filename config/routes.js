@@ -17,6 +17,12 @@ routes.route('/users/:id')
   .delete(users.delete);
 
 routes.route('/groups')
-  .get(groups.index);
+  .get(groups.index)
+  .post(groups.create);
+routes.route('/groups/:id')
+  .get(groups.show)
+  .put(groups.update)
+  .patch(groups.update)
+  .delete(groups.delete);
 
 module.exports = routes;
