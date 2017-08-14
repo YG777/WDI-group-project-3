@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const suggestionSchema = new mongoose.Schema({
   image: { type: String },
   name: { type: String, required: true },
+  votes: { type: Number, required: true },
   meal: { type: String },
   address: { type: String },
   url: { type: String }
