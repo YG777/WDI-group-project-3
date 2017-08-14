@@ -6,12 +6,12 @@ CurrentUserService.$inject = ['TokenService', 'User', '$rootScope'];
 function CurrentUserService(TokenService, User, $rootScope ) {
   const self = this;
 
-  self.getUser = ()=> {
+  self.getUser = () => {
     const decoded = TokenService.decodeToken();
     if (decoded) {
       User.get({ id: decoded.id})
       .$promise
-      .then(data =>{
+      .then(data => {
         self.currentUser = data;
         $rootScope.$broadcast('loggedIn');
       });

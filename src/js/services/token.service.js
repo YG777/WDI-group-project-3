@@ -9,16 +9,14 @@ function TokenService($window, jwtHelper) {
   self.setToken = (token) => {
     return $window.localStorage.setItem('auth-token', token);
   };
-
   self.getToken = () => {
     return $window.localStorage.getItem('auth-token');
   };
-
-  self.decodeToken = ()=> {
+  self.decodeToken = () => {
     const token = self.getToken();
     return token ? jwtHelper.decodeToken(token): null;
   };
-  self.removeToken = ()=> {
+  self.removeToken = () => {
     $window.localStorage.clear();
   };
 }
