@@ -39,7 +39,7 @@ function usersDelete(req, res) {
   User.findByIdAndRemove(req.params.id)
     .exec()
     .then(() => {
-      res.status(204);
+      res.sendStatus(204);
     })
     .catch(err => {
       res.status(500).json(err);
