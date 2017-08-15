@@ -1,8 +1,8 @@
 angular.module('group-proj')
-.controller('GroupNewCtrl', GroupNewCtrl);
+.controller('GroupsNewCtrl', GroupsNewCtrl);
 
-GroupNewCtrl.$inject = ['Group', '$state', 'CurrentUserService'];
-function GroupNewCtrl(Group, $state, CurrentUserService) {
+GroupsNewCtrl.$inject = ['Group', '$state', 'CurrentUserService'];
+function GroupsNewCtrl(Group, $state, CurrentUserService) {
   const vm = this;
   const currentUserId = CurrentUserService.currentUser.id;
   vm.group = {admin: currentUserId ,members: []};

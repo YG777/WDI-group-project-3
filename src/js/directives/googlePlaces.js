@@ -12,20 +12,8 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
       center: '='
     },
     link($scope, element) {
-      console.log(element[0]);
-
-      var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
-
-      autocomplete = new $window.google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */element[0],
+      var autocomplete = new $window.google.maps.places.Autocomplete(
+            element[0],
             {types: ['establishment']});
 
       autocomplete.addListener('place_changed', addSuggestion);
@@ -36,9 +24,6 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
         place.address_components.forEach(component => {
           address += `${component.short_name} `;
         });
-        console.log(address);
-        console.log(place.name);
-
         const newSuggestion = {
           name: place.name,
           votes: 1,
@@ -47,20 +32,14 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
         Group.get({id: $stateParams.id})
           .$promise
           .then(group => {
-            const groupSuggestions = group.suggestions;
-
-            groupSuggestions.push(newSuggestion);
-            const toUpdateData = {suggestions: groupSuggestions};
+            group.suggestions.push(newSuggestion);
+            const toUpdateData = {suggestions: group.suggestions};
             Group.update({id: $stateParams.id}, toUpdateData);
             $rootScope.$broadcast('suggestionAdded');
           });
       }
 
     }
-
-
-    // Create the autocomplete object, restricting the search to geographical
-    // location types.
 
   };
   return directive;

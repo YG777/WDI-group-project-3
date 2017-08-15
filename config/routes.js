@@ -3,6 +3,8 @@ const users = require('../controllers/users');
 const auth = require('../controllers/authentications');
 const groups = require('../controllers/groups');
 const suggestions = require('../controllers/suggestions');
+const messageThread = require('../controllers/messageThread');
+const messages = require('../controllers/messages');
 
 routes.route('/register')
   .post(auth.register);
@@ -22,9 +24,16 @@ routes.route('/groups')
   .post(groups.create);
 routes.route('/groups/:id')
   .get(groups.show)
-  .post(suggestions.create)
+  // .post(suggestions.create)
   .put(groups.update)
   .patch(groups.update)
   .delete(groups.delete);
+
+routes.route('/messages/:id')
+  .get(messageThread.show)
+  .post(messages.create)
+  .put(messageThread.update)
+  .patch(messageThread.update);
+
 
 module.exports = routes;

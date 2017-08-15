@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const User     = require('../models/user');
 const Group    = require('../models/group');
+const MessageThread = require('../models/messageThread');
 const config   = require('../config/config');
 mongoose.Promise = require('bluebird');
 mongoose.connect(config.db);
@@ -40,6 +41,14 @@ User.create([{
 })
 .then(groups => {
   console.log(`${groups.length} groups created!`);
+  return MessageThread.create([
+    { group: groups[0]._id },
+    { group: groups[1]._id },
+    { group: groups[2]._id }
+  ])
+  .then(messageThreads => {
+    console.log(`${messageThreads.length} message threads created!`);
+  });
 })
 .finally(() => {
   mongoose.connection.close();
