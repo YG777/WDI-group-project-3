@@ -1,9 +1,9 @@
 angular
 .module('group-proj')
-.controller('GroupShowCtrl', GroupShowCtrl);
+.controller('GroupsShowCtrl', GroupsShowCtrl);
 
-GroupShowCtrl.$inject = ['API', '$stateParams', 'Group'];
-function GroupShowCtrl(API, $stateParams, Group){
+GroupsShowCtrl.$inject = ['API', '$stateParams', 'Group'];
+function GroupsShowCtrl(API, $stateParams, Group){
   const vm = this;
   vm.group = Group.get({id: $stateParams.id});
   // return vm.todos[$stateParams.id];

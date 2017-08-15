@@ -29,25 +29,25 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/groups',
     templateUrl: '/js/views/groups/index.html',
     controller: 'GroupsIndexCtrl',
-    controllerAs: 'groupsIndex'
+    controllerAs: 'groups'
   })
   .state('groupsNew', {
     url: '/groups/new',
     templateUrl: '/js/views/groups/new.html',
-    controller: 'GroupNewCtrl',
-    controllerAs: 'groupsNew'
+    controller: 'GroupsNewCtrl',
+    controllerAs: 'groups'
   })
   .state('groupsShow', {
     url: '/groups/:id',
     templateUrl: '/js/views/groups/show.html',
-    controller: 'GroupShowCtrl',
-    controllerAs: 'groupsShow'
+    controller: 'GroupsShowCtrl',
+    controllerAs: 'groups'
   })
-  .state('groupEdit', {
+  .state('groupsEdit', {
     url: '/groups/:id/edit',
     templateUrl: '/js/views/groups/edit.html',
-    controller: 'GroupEditCtrl',
-    controllerAs: 'groupEdit'
+    controller: 'GroupsEditCtrl',
+    controllerAs: 'groups'
   });
 
   $urlRouterProvider.otherwise('/');
