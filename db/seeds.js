@@ -30,7 +30,7 @@ User.create([{
   },{
     name: 'WDI Lunch!',
     organization: 'GA WDI 28',
-    members: [users[0]._id, users[1]._id]
+    members: [users[0]._id]
   },{
     name: 'WDI PUB!',
     organization: 'GA WDI 28',

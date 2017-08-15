@@ -2,4 +2,7 @@
 <div ng-repeat="user in usersIndex.users">
   <h4>{{user.name}}</h4>
   <h4>{{user.email}}</h4>
+  <ul>
+    <li ng-repeat="group in user.groups track by $index">{{group.name}}</li>
+  </ul>
 </div>

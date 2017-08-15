@@ -14,6 +14,4 @@ function GroupNewCtrl(Group, $state, CurrentUserService) {
       .$promise
       .then($state.go('groupsIndex'));
   }
-
-
 }

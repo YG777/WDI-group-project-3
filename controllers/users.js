@@ -2,6 +2,7 @@ const User = require('../models/user');
 
 function usersIndex(req, res) {
   User.find()
+    .populate('groups')
     .exec()
     .then(data => {
       if (!data) return res.status(404).json({ message: 'Error: Not found.'});
@@ -14,6 +15,8 @@ function usersIndex(req, res) {
 
 function usersShow(req, res) {
   User.findById(req.params.id)
+    .populate('groups')
+    .exec()
     .then(data => {
       if (!data) return res.status(404).json({ message: 'Error: Not found.'});
       res.status(200).json(data);
