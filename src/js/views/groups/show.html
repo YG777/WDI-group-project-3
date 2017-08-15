@@ -15,7 +15,8 @@
 <div class="">
   <h1>Suggestions</h1>
   <ul>
-    <li ng-repeat="suggestion in groups.group.suggestions">{{suggestion.name}}</li>
+    <li ng-repeat="suggestion in groups.group.suggestions"  value="Add">{{suggestion.name}} {{suggestion.votes}}  <input type="submit" ng-click="groups.upvote(suggestion)"  value="Vote"></li>
+
   </ul>
 </div>
 
@@ -26,13 +27,13 @@
 <button class="pure-button" ><a ui-sref="groupsIndex">Back</a></button>
 </aside>
 <aside id="showsidecontainer" class="pure-u-1-4">
-<h1>Suggestions</h1> 
+<h1>Suggestions</h1>
 <form class="pure-form pure-form-aligned">
     <fieldset>
         <div class="pure-control-group">
             <label for="comments">Comments</label>
             <input id="comments" type="text" placeholder="suggestions">
-            
+
       <span class="pure-form-message-inline">This is a required field.</span>
         </div>
         <button type="submit" class="pure-button pure-button-primary">Submit</button>

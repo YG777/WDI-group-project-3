@@ -36,8 +36,6 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
         place.address_components.forEach(component => {
           address += `${component.short_name} `;
         });
-        console.log(address);
-        console.log(place.name);
 
         const newSuggestion = {
           name: place.name,
@@ -55,12 +53,7 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
             $rootScope.$broadcast('suggestionAdded');
           });
       }
-
     }
-
-
-    // Create the autocomplete object, restricting the search to geographical
-    // location types.
 
   };
   return directive;
