@@ -1,9 +1,22 @@
-<h3>{{groups.group.organization}}</h3>
 
-<h1>Members</h1>
-<ul>
-  <li ng-repeat="member in groups.group.members">{{member.name}}</li>
-</ul>
+<!DOCTYPE html>
 
-<button ui-sref="groupsEdit({ id: groups.group.id})">Edit</button>
-<button ><a ui-sref="groupsIndex">Back</a></button>
+<div>
+  <h2>{{groupsShow.group.organization}}</h2>
+  <h3>Lunch Members</h3>
+    <ul >
+      <li ng-repeat="member in groups.group.members"> {{member.name}} </li>
+    </ul>
+</div>
+
+<!-- <h3>Find Nearby Places</h3>
+<form id="search">
+  <label for="query">Search For</label>
+  <input id="query">
+  <button>Search</button>
+</form>
+<google-places></google-places> -->
+
+
+<button class="pure-button" ui-sref="groupsEdit({ id: groups.group.id})">Edit</button>
+<button class="pure-button" ><a ui-sref="groupsIndex">Back</a></button>
