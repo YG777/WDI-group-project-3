@@ -1,4 +1,5 @@
 const Group = require('../models/group');
+const MessageThread = require('../models/messageThread');
 
 function groupsIndex(req, res) {
   Group.find()
@@ -27,6 +28,12 @@ function groupsCreate(req, res) {
     .then(data => {
       if (!data) return res.status(404).json({ message: 'Error: Not Valid.' });
       res.status(201).json(data);
+      const messageThreadCreationObject = {group: data.id};
+      return MessageThread.create(messageThreadCreationObject)
+        .then(data => {
+          if (!data) return res.status(404).json({ message: 'Error: Not Valid.' });
+          res.status(201).json(data);
+        });
     })
     .catch(err => res.status(500).json(err));
 }
