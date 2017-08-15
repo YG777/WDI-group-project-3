@@ -1,14 +1,9 @@
-
-
-
-
-<h3>{{groupsShow.group.organization}}</h3>
-
+<h3>{{groups.group.organization}}</h3>
 
 <h1>Members</h1>
 <ul>
-  <li ng-repeat="member in groupsShow.group.members">{{member.name}}</li>
+  <li ng-repeat="member in groups.group.members">{{member.name}}</li>
 </ul>
 
-<button ui-sref="">Edit</button>
+<button ui-sref="groupsEdit({ id: groups.group.id})">Edit</button>
 <button ><a ui-sref="groupsIndex">Back</a></button>

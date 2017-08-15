@@ -4,10 +4,11 @@ angular.module('group-proj')
 GroupNewCtrl.$inject = ['Group', '$state', 'CurrentUserService'];
 function GroupNewCtrl(Group, $state, CurrentUserService) {
   const vm = this;
-  vm.group = {members: []};
+  const currentUserId = CurrentUserService.currentUser.id;
+  vm.group = {admin: currentUserId ,members: []};
   vm.new = groupsNew;
 
-  vm.group.members.push(CurrentUserService.currentUser.id);
+  vm.group.members.push(currentUserId);
   function groupsNew() {
     Group.save(vm.group)
       .$promise

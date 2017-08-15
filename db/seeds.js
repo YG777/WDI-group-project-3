@@ -23,16 +23,18 @@ User.create([{
   console.log(`${users.length} users created!`);
 
   return Group.create([{
-    name: 'Test group',
-    organization: 'GA WDI 28 Lunch!',
+    name: 'WDI Breakfast!',
+    organization: 'GA WDI 28',
+    admin: users[0]._id,
     members: [users[0]._id, users[1]._id]
   },{
-    name: 'Delete group',
-    organization: 'GA WDI 28 Lunch',
+    name: 'WDI Lunch!',
+    organization: 'GA WDI 28',
     members: [users[0]._id, users[1]._id]
   },{
-    name: 'Delete group2',
-    organization: 'GA WDI 28 Lunch',
+    name: 'WDI PUB!',
+    organization: 'GA WDI 28',
+    admin: users[0]._id,
     members: [users[0]._id, users[1]._id]
   }]);
 })
