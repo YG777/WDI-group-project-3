@@ -11,13 +11,15 @@
     </ul>
 </div>
 
-<!-- <h3>Find Nearby Places</h3>
-<form id="search">
-  <label for="query">Search For</label>
-  <input id="query">
-  <button>Search</button>
-</form>
-<google-places></google-places> -->
+
+<div class="">
+  <h1>Suggestions</h1>
+  <ul>
+    <li ng-repeat="suggestion in groups.group.suggestions">{{suggestion.name}}</li>
+  </ul>
+</div>
+
+<google-places></google-places>
 
 
 <button class="pure-button" ui-sref="groupsEdit({ id: groups.group.id})">Edit</button>
