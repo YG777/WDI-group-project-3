@@ -2,9 +2,17 @@ angular
 .module('group-proj')
 .controller('GroupsShowCtrl', GroupsShowCtrl);
 
-GroupsShowCtrl.$inject = ['API', '$stateParams', 'Group'];
-function GroupsShowCtrl(API, $stateParams, Group){
+GroupsShowCtrl.$inject = ['$stateParams', 'Group', '$rootScope'];
+function GroupsShowCtrl($stateParams, Group, $rootScope){
   const vm = this;
-  vm.group = Group.get({id: $stateParams.id});
+  vm.show = show;
+  vm.show();
+
+  function show() {
+    vm.group = Group.get({id: $stateParams.id});
+  }
+  $rootScope.$on('suggestionAdded', () => vm.show());
+
+
   // return vm.todos[$stateParams.id];
 }

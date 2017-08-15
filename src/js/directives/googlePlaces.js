@@ -2,8 +2,8 @@ angular
 .module('group-proj')
 .directive('googlePlaces', googlePlaces);
 
-googlePlaces.$inject = ['$window'];
-function googlePlaces($window) {
+googlePlaces.$inject = ['$window', 'Group', '$stateParams', '$rootScope'];
+function googlePlaces($window, Group, $stateParams, $rootScope) {
   const directive = {
     restrict: 'E',
     replace: true,
@@ -28,7 +28,34 @@ function googlePlaces($window) {
             /** @type {!HTMLInputElement} */element[0],
             {types: ['establishment']});
 
-        // autocomplete.addListener('place_changed', fillInAddress);
+      autocomplete.addListener('place_changed', addSuggestion);
+
+      function addSuggestion() {
+        const place = autocomplete.getPlace();
+        let address = '';
+        place.address_components.forEach(component => {
+          address += `${component.short_name} `;
+        });
+        console.log(address);
+        console.log(place.name);
+
+        const newSuggestion = {
+          name: place.name,
+          votes: 1,
+          address
+        };
+        Group.get({id: $stateParams.id})
+          .$promise
+          .then(group => {
+            const groupSuggestions = group.suggestions;
+
+            groupSuggestions.push(newSuggestion);
+            const toUpdateData = {suggestions: groupSuggestions};
+            Group.update({id: $stateParams.id}, toUpdateData);
+            $rootScope.$broadcast('suggestionAdded');
+          });
+      }
+
     }
 
 
