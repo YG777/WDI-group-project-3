@@ -26,10 +26,16 @@
       <button class="pure-button" ><a ui-sref="groupsIndex">Back</a></button>
     </div>
   </section>
+
+
   <aside id="showsidecontainer" class="pure-u-1-4">
-    <ul>
-      <li ng-repeat="message in groups.messages.messages">{{message.body}} <b>{{message.user}}</b></li>
-    </ul>
+
+    <div id="message-thread" class="message-thread" scroll-glue force-glue>
+      <div ng-repeat="message in groups.messages.messages" class="message-row">
+        <p ng-class="main.user.id === message.user.id ? 'current-user-messge' : ''" ><small>{{message.user.name}}<br></small>{{message.body}}</p>
+      </div>
+    </div>
+
 
     <form class="pure-form pure-form-aligned" ng-submit="groups.postMessage()">
       <fieldset>
@@ -41,4 +47,5 @@
       </fieldset>
     </form>
   </aside>
+
 </div>
