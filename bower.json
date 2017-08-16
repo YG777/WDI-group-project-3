@@ -19,6 +19,7 @@
     "angular-jwt": "^0.1.9",
     "angular-ui-router": "^1.0.6",
     "angular-resource": "^1.6.5",
-    "pure": "^1.0.0"
+    "pure": "^1.0.0",
+    "angular-scroll-glue": "^2.2.0"
   }
 }

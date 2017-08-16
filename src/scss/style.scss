@@ -62,6 +62,7 @@ border: 1px solid black;
 }
 
 .allGroupContainers {
+<<<<<<< HEAD
   align-items: center;
   display: flex;
   justify-content: center;
@@ -77,9 +78,20 @@ justify-content: center;
   // border: 2px solid black;
   width: 250px;
   height: 250px;
+=======
+  width: 800px;
+  text-align: left;
+  margin: 0 auto
+}
+
+.groupContainer {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+>>>>>>> 832d12c2f2222e1287f72f08a7b904dcdd1e0e68
   list-style-type: none;
   padding: 8px;
-  margin: 10px;
+  margin: 20px;
   position: relative;
   color: white;
   display: inline-block;
@@ -118,6 +130,11 @@ color: white;
 button {
   margin: 2px;
   display: inline-block;
+}
+
+ul {
+  padding: 0;
+  margin: 0
 }
 
 li {
@@ -181,4 +198,20 @@ li {
 
 .landing-p-sect-padng {
   padding: 40px 0;
+}
+
+.message-row {
+  clear: both;
+  padding: 0;
+  margin: 0
+}
+
+.current-user-messge {
+  float: right;
+  display: block;
+}
+
+.message-thread {
+  height: 400px;
+  overflow: scroll;
 }

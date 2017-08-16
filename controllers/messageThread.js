@@ -12,6 +12,7 @@ function messageThreadIndex(req, res) {
 
 function messageThreadShow(req, res) {
   MessageThread.findOne({group: req.params.id})
+    .populate('messages.user')
     .exec()
     .then(data => {
       if (!data) return res.status(404).json({ message: 'Error: Not Valid.' });
