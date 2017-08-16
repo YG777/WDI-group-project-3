@@ -1,6 +1,20 @@
 const { api, expect } = require('./spec_helper');
+// const routes = require('../config/routes');
 
-describe('GET /group', () => {
+//confirm that routes.route is called using the right values
+//is routes.route called with /register
+
+describe('GET /groups', () => {
+  it('should return a 200', function(done) {
+    // this.skip()
+    api
+      .get('/groups')
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status).to.eq(200);
+        done();
+      });
+  });
   it('should return a 200', function(done) {
     // this.skip()
     api
@@ -10,12 +24,13 @@ describe('GET /group', () => {
         expect(res.status).to.eq(200);
         done();
       });
-    it('should display all the groups', (done) => {
-        api.get('/group')
-        .end((err, res) => {
-            //test for each - conect to the 
-        })
-    });
-  });
+  // });
+  // it('should display all the groups', function(done) {
+  //   api
+  //     .get('/groups')
+  //     .end((err, res) => {
+  //       if(err) console.log(err);
+  //       expect(res.status).to.eq(200); 
+  //     });
+  // });
 });
-

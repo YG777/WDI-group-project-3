@@ -14,8 +14,10 @@ const suggestionSchema = new mongoose.Schema({
 const groupSchema = new mongoose.Schema({
   name: { type: String, required: true },
   organization: { type: String },
+  admin: { type: mongoose.Schema.ObjectId, ref: 'User' },
   members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  suggestions: [suggestionSchema]
+  suggestions: [suggestionSchema],
+  messages: [{ type: mongoose.Schema.ObjectId, ref: 'Message' }]
 },{
   timestamps: true
 });

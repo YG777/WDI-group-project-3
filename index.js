@@ -17,9 +17,6 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api', routes);
-app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
-
 app.use('/api', expressJWT({ secret: config.secret})
 .unless({
   path: [
@@ -34,6 +31,9 @@ function jwtErrorHandler(err, req, res, next) {
   if (err.name !== 'UnauthorizedError') return next();
   return res.status(401).json({ message: 'Unauthorized request'});
 }
+
+app.use('/api', routes);
+app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
 app.listen(config.port, () => console.log(`Express has started on port: ${config.port}`));
 

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<h1>GroupsIndex</h1>
+<ul>
+  <li ng-repeat="group in groups.all">
+    <a ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
+    <button ng-click="groups.delete(group)">Delete</button>
+    <button ng-click="groups.joinGroup(group.id)">Join</button>
+  </li>
+</ul>
