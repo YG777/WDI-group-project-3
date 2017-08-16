@@ -31,7 +31,9 @@ User.create([{
   },{
     name: 'WDI Lunch!',
     organization: 'GA WDI 28',
-    members: [users[0]._id]
+    members: [users[0]._id],
+    location: 'London',
+    groupPic: 'https://thecitylane.com/wp-content/uploads/2015/06/Katsu03.jpg'
   },{
     name: 'WDI PUB!',
     organization: 'GA WDI 28',

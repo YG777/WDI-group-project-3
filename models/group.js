@@ -6,7 +6,8 @@ const suggestionSchema = new mongoose.Schema({
   votes: { type: Number, required: true },
   meal: { type: String },
   address: { type: String },
-  url: { type: String }
+  url: { type: String },
+  userVotes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 }, {
   timestamps: true
 });
@@ -14,10 +15,11 @@ const suggestionSchema = new mongoose.Schema({
 const groupSchema = new mongoose.Schema({
   name: { type: String, required: true },
   organization: { type: String },
+  location: { type: String },
+  groupPic: { type: String },
   admin: { type: mongoose.Schema.ObjectId, ref: 'User' },
   members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  suggestions: [suggestionSchema],
-  messages: [{ type: mongoose.Schema.ObjectId, ref: 'Message' }]
+  suggestions: [suggestionSchema]
 },{
   timestamps: true
 });
