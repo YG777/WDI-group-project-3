@@ -28,22 +28,19 @@ beforeEach((done) => {
   Group.create(testData, done);
 });
 
-//display all names of the groups
-//join button if not joined yet
 
-describe('GET /groups', () => {
+describe('GET /api/groups', () => {
   it('should return a 200', function (done) {
     api
-      .get('/groups')
+      .get('/api/groups')
       .end((err, res) => {
-        if (err) console.log(err);
         expect(res.status).to.eq(200);
         done();
       });
       
     it('should display all the groups', function (done) {
       api
-        .get('/groups')
+        .get('/api/groups')
         .end((err, res) => {
           testData.forEach((record) => {
             expect(res.text).to.contain(`<a>${record.name}</a>`);
@@ -55,59 +52,22 @@ describe('GET /groups', () => {
 });
 
 
-describe('GET /groups/new', () => {
-  it('should return a 200 response', (done) => {
-    api
-      .get('/groups/new')
-      .expect(200, done);
-  });
-
-  // it('should display a form'), (done) => {
-  //   api.get('groups/new')
-  //     .end((err, res) => {
-  //       expect(res.text).to.contain('<form ng-submit="groups.new()">');
-  //       expect(res.text).to.contain('ng-model="groups.group.name"');
-  //       expect(res.text).to.contain('ng-model="groups.group.organization"');
-  //     done();
-  //   });
-  // });
-});
-
-describe('POST /groups', () => {
-  it('should redirect to /groups', (done) => {
-    api.post('/groups')
+describe('POST /api/groups', () => {
+  it('should return  201 Created', function(done) {
+    var name = 'WDI Friday Lunch';
+    var organization = 'GA students';
+    api.post('/api/groups')
       .type('form')
-      .send({
-        name: 'WDI Friday Lunch',
-        organization: 'GA students'
-      })
+      .send({ name, organization })
       .end((err, res) => {
-        expect(res.status).to.equal(302);
-        expect(res.headers.location).to.equal('/groups');
+        expect(res.status).to.equal(201);
         done();
       });
   });
-
-// it('should create a new group', (done) => {
-//   api.post('/groups')
-//     .type('form')
-//     .send({
-//       name: 'WDI Friday Lunch',
-//       organization: 'GA students'
-//     })
-//     .end(() => {
-//       api.get('/groups')
-//         .end((err, res) => {
-//           expect(res.text).to.contain('ng-repeat="group in groups.all"');
-//           expect(res.text).to.contain('ui-sref="groupsShow({ id: group.id })"');
-//           done();
-//         });
-//     });
-// });
 });
 
 
-describe('GET /groups/:id', () => {
+describe('GET /api/groups/:id', () => {
   let record = null;
   beforeEach((done) => {
     Group.findOne({ name: 'WDI PUB!' }, (err, group) => {
@@ -116,39 +76,11 @@ describe('GET /groups/:id', () => {
     });
   });
   
-  it('should return a 200 response', (done) => {
+  it('should return a 200 Ok', (done) => {
     api
-      .get(`/groups/${record.id}`)
+      .get(`/api/groups/${record.id}`)
       .expect(200, done);
+      //check the data is correct
   });
-  
-  // it('should display the group', (done) => {
-  //   api
-  //     .get(`/groups/${record.id}`)
-  //     .end((err, res) => {
-  //       expect(res.text).to.contain('');
-  //       expect(res.text).to.contain('');
-  //       done();
-  //     });
-  // });
-  
-  // it('should display an edit link', (done) => {
-  //   api
-  // .get(`/groups/${record.id}`)
-  //     .end((err, res) => {
-  //       expect(res.text).to.contain(`href="/groups/${record.id}/edit"`);
-  //       done();
-  //     });
-  // });
-  
-  // it('should display a delete form', (done) => {
-  //   api
-  //     .get(`/groups/${record.id}`)
-  //     .end((err, res) => {
-  //       expect(res.text).to.contain(``);
-  //       expect(res.text).to.contain(``);
-  //       done();
-  //     });
-  // });
   
 });

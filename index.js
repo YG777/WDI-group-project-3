@@ -17,13 +17,14 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// comment out this to test api 
 app.use('/api', expressJWT({ secret: config.secret})
-.unless({
-  path: [
-    {url: '/api/login', methods: ['POST']},
-    {url: '/api/register', methods: ['POST']}
-  ]
-}));
+  .unless({
+    path: [
+      {url: '/api/login', methods: ['POST']},
+      {url: '/api/register', methods: ['POST']}
+    ]
+  }));
 
 app.use(jwtErrorHandler);
 
