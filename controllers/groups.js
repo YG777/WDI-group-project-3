@@ -43,7 +43,6 @@ function groupsCreate(req, res) {
       res.status(500).json(err);
     });
 }
-
 function groupsUpdate(req, res) {
   Group.findByIdAndUpdate(req.params.id, req.body)
     .exec()
