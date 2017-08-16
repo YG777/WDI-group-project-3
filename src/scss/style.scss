@@ -1,3 +1,6 @@
+html{
+  font-family: 'Raleway', sans-serif;
+}
 google-places{
   height: 300px;
   width: 300px;
@@ -35,4 +38,59 @@ border: 1px solid black;
 
 .accent-c-bg{
   background-color: #E54B29
+}
+
+.groupIndexContainer{
+  text-align: center;
+  height: 100vh;
+
+  // background-color: #BC7C9C;
+  // margin-left: 250px;
+  // margin-right: 100px;
+  // align-items: center;
+  // display: flex;
+  // justify-content: center;
+}
+
+.allGroupContainers {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.groupContainer {
+  border: 2px solid black;
+  width: 250px;
+  height: 250px;
+  list-style-type: none;
+  padding: 8px;
+  margin: 10px;
+  position: relative;
+}
+
+.groupImage{
+  width: 100px;
+  height: 100px;
+}
+
+.groupIndexButtons{
+  top: 220px;
+  right: 55px;
+  position: absolute;
+  float: right;
+
+}
+
+.button-group {
+  float: right;
+  right: 2px;
+}
+
+button {
+  margin: 2px;
+  display: inline-block;
+}
+
+li {
+  list-style-type: none;
 }

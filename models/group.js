@@ -15,6 +15,8 @@ const suggestionSchema = new mongoose.Schema({
 const groupSchema = new mongoose.Schema({
   name: { type: String, required: true },
   organization: { type: String },
+  location: { type: String },
+  groupPic: { type: String },
   admin: { type: mongoose.Schema.ObjectId, ref: 'User' },
   members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   suggestions: [suggestionSchema]
