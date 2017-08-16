@@ -12,15 +12,30 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  <header>
-    <div class="pure-menu pure-menu-horizontal">
-      <a ui-sref="usersIndex" class="pure-menu-heading pure-menu-link">Lunch</a>
+  <header ng-class="main.landingPage ? 'main-c-bg' : 'accent-c-bg'">
+    <div class="pure-menu pure-menu-horizontal nav-text-size">
+      <!-- <a ng-hide="main.user" ui-sref="landingPage" class="pure-menu-link main-pure-menu-link main-c">Lunch it!</a> -->
+      <!-- <a ng-show="main.user" ui-sref="groupsIndex" class="pure-menu-link main-pure-menu-link main-c">Lunch it!</a> -->
       <ul class="pure-menu-list">
-        <li ng-show="main.user" class="pure-menu-item"><a ui-sref="usersIndex" class="pure-menu-link">Index</a></li>
-        <li ng-show="main.user" class="pure-menu-item"><a ui-sref="groupsIndex" class="pure-menu-link">Groups</a></li>
-        <li ng-show="main.user" ng-click="main.logout()" class="pure-menu-item"><a ui-sref="logout" class="pure-menu-link">Logout</a></li>
-        <li ng-hide="main.user" class="pure-menu-item"><a ui-sref="login" class="pure-menu-link">Login</a></li>
-        <li ng-hide="main.user" id="logout" class=" pure-menu-item"><a ui-sref="register" class="pure-menu-link">Register</a></li>
+        <!-- <li ng-show="main.user" class="pure-menu-item"><a ui-sref="usersIndex" class="pure-menu-link main-pure-menu-link main-c">Index</a></li> -->
+        <li class="pure-menu-item">
+          <a ng-hide="main.user" ui-sref="landingPage" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Lunch it!</a>
+        </li>
+        <li class="pure-menu-item">
+          <a ng-show="main.user" ui-sref="groupsIndex" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Lunch it!</a>
+        </li>
+        <li ng-show="main.user" class="pure-menu-item">
+          <a ui-sref="groupsIndex" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Groups</a>
+        </li>
+        <li ng-show="main.user" ng-click="main.logout()" class="pure-menu-item">
+          <a ui-sref="logout" class="cursor-pointer pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Logout</a>
+        </li>
+        <li ng-hide="main.user" class="pure-menu-item">
+          <a ui-sref="login" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Login</a>
+        </li>
+        <li ng-hide="main.user" id="logout" class=" pure-menu-item">
+          <a ui-sref="register" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Register</a>
+        </li>
       </ul>
     </div>
   </header>

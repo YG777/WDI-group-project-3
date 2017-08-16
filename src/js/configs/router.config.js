@@ -7,6 +7,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
+  .state('landingPage', {
+    url: '/landingpage',
+    templateUrl: '/js/views/landingpage.html',
+    controller: 'LandingPageCtrl',
+    controllerAs: 'landingPage'
+  })
   .state('register', {
     url: '/register',
     templateUrl: '/js/views/register.html',
