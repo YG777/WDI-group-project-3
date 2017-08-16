@@ -51,60 +51,61 @@ border: 1px solid black;
 .groupIndexContainer{
   text-align: center;
   height: 100vh;
-
-
-  // background-color: #BC7C9C;
-  // margin-left: 250px;
-  // margin-right: 100px;
-  // align-items: center;
-  // display: flex;
-  // justify-content: center;
+  background-color: #FBF9F8;
 }
 
 .allGroupContainers {
-<<<<<<< HEAD
+
   align-items: center;
-  display: flex;
-  justify-content: center;
-  max-width: 768px;
-margin: 0 auto !important;
-float: none !important;
-display: -flexbox;
-align-content: flex-start;
-justify-content: center;
+  // display: flex;
+  // justify-content: center;
+  // max-width: 768px;
+  margin: 0 auto !important;
+  display: inline-block;
+  background-color: #FBF9F8;
 }
 
 .groupContainer {
   // border: 2px solid black;
-  width: 250px;
-  height: 250px;
-=======
-  width: 800px;
-  text-align: left;
-  margin: 0 auto
-}
-
-.groupContainer {
-  border: 2px solid black;
-  width: 200px;
-  height: 200px;
->>>>>>> 832d12c2f2222e1287f72f08a7b904dcdd1e0e68
+  width: 400px;
+  height: 400px;
   list-style-type: none;
   padding: 8px;
+
   margin: 20px;
+  margin-top: 40px;
   position: relative;
-  color: white;
+  color: black;
   display: inline-block;
   text-decoration: none !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  border-radius: 20%;
+}
+
+.groupInfo{
+  background-color: #FDFFF5;
+  height: 100px;
+  width: 418px;
+  position: relative;
+  top: 310px;
+  right: 10px;
+  // border: 1px solid black;
+  padding-top: 3px;
+  text-align: left;
 }
 
 .whiteText{
-color: white;
+color: black;
+font-weight: bold;
+font-size: 20px;
+padding-left: 5px;
+}
+
+.fa-star{
+  color: #E54B29;
+  size: 30px;
 }
 
 
@@ -115,11 +116,11 @@ color: white;
 }
 
 .groupIndexButtons{
-  top: 220px;
-  right: 55px;
+  top: 430px;
+  right: 125px;
   position: absolute;
-  float: right;
-
+  padding-bottom: 8px;
+  // float: right;
 }
 
 .button-group {

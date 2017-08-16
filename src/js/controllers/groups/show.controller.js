@@ -12,8 +12,10 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
   vm.updateSuggestions = updateSuggestions;
   vm.postMessage = postMessage;
   vm.newMessage = {user: vm.currentUserId};
+  vm.topVote = topVote;
 
   vm.show();
+  vm.topVote();
 
   function upvote(suggestion) {
     const index = vm.group.suggestions.indexOf(suggestion);
@@ -34,6 +36,14 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
         vm.updateSuggestions();
       });
     }
+  }
+
+  function topVote(){
+    Array.max = function( userVotes ){
+      return Math.max.apply( Math, userVotes );
+    };
+    console.log(topVote);
+
   }
 
   function show() {
