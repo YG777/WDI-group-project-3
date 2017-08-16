@@ -2,12 +2,12 @@ angular
 .module('group-proj')
 .directive('googlePlaces', googlePlaces);
 
-googlePlaces.$inject = ['$window', 'Group', '$stateParams', '$rootScope'];
-function googlePlaces($window, Group, $stateParams, $rootScope) {
+googlePlaces.$inject = ['$window', 'Group', '$stateParams', '$rootScope', 'CurrentUserService'];
+function googlePlaces($window, Group, $stateParams, $rootScope, CurrentUserService) {
   const directive = {
     restrict: 'E',
     replace: true,
-    template: '<input type="text" id="google-places" />',
+    template: '<input style="width: inherit" type="text" id="google-places" />',
     scope: {
       center: '='
     },
@@ -27,7 +27,8 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
         const newSuggestion = {
           name: place.name,
           votes: 1,
-          address
+          address,
+          userVotes: [CurrentUserService.currentUser.id]
         };
         Group.get({id: $stateParams.id})
           .$promise
