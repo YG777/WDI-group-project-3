@@ -6,9 +6,6 @@ GroupsIndexCtrl.$inject = ['Group', 'User', 'CurrentUserService'];
 function GroupsIndexCtrl( Group, User, CurrentUserService) {
   const vm = this;
   vm.all = [];
-  vm.currentUser = User.get({ id: CurrentUserService.currentUser.id }, user => {
-    vm.currentUserGroups = { groups: user.groups };
-  });
   vm.index = index;
   vm.delete = groupDelete;
   vm.joinGroup = joinGroup;
@@ -24,8 +21,8 @@ function GroupsIndexCtrl( Group, User, CurrentUserService) {
     User.get({ id: CurrentUserService.currentUser.id })
     .$promise
     .then(user => {
-      vm.groupsId = [];
       vm.currentUser = user;
+      vm.groupsId = [];
       user.groups.forEach(group => {
         vm.groupsId.push(group.id);
       });
@@ -35,10 +32,10 @@ function GroupsIndexCtrl( Group, User, CurrentUserService) {
         group.members.forEach(member => {
           vm.membersId.push(member.id);
         });
-        const toPushGroup = {members: vm.membersId};
-        if (toPushGroup.members.indexOf(vm.currentUser.id) >= 0) return console.log('Cant join a group twice');
-        toPushGroup.members.push(vm.currentUser.id);
-        Group.update({ id: group.id }, toPushGroup);
+        vm.currentGroupMembers = { members: vm.membersId };
+        if (vm.currentGroupMembers.members.indexOf(vm.currentUser.id) >= 0) return console.log('Cant join a group twice');
+        vm.currentGroupMembers.members.push(vm.currentUser.id);
+        Group.update({ id: group.id }, vm.currentGroupMembers);
       })
       .$promise
       .then(() => {

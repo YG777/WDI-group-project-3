@@ -25,11 +25,8 @@ function messageThreadUpdate(req, res) {
     .exec()
     .then(message => {
       if (!message) return res.status(404).json({ message: 'Error: Not Valid.' });
-      console.log(message);
-      console.log(req.body);
       message.messages.push(req.body);
       message.save();
-      console.log(`MESSAGE POST SAVE ********* ${message}`);
       res.status(200).json(message);
     })
     .catch(err => res.status(500).json(err));

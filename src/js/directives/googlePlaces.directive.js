@@ -37,6 +37,7 @@ function googlePlaces($window, Group, $stateParams, $rootScope) {
             Group.update({id: $stateParams.id}, toUpdateData);
             $rootScope.$broadcast('suggestionAdded');
           });
+        element[0].value = '';
       }
     }
 

@@ -7,21 +7,30 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
   const vm = this;
   vm.currentUserId = CurrentUserService.currentUser.id;
   vm.show = show;
+  vm.upvote = upvote;
+  vm.updateSuggestions = updateSuggestions;
   vm.postMessage = postMessage;
   vm.newMessage = {user: vm.currentUserId};
-  vm.show();
-  vm.newCount = {votes: 1};
 
-  vm.upvote = function(suggestion){
+  vm.show();
+
+  function upvote(suggestion) {
     vm.group.suggestions[vm.group.suggestions.indexOf(suggestion)].votes++;
     Group.update({id: vm.group.id}, {suggestions: vm.group.suggestions});
-  };
+  }
 
   function show() {
     vm.group = Group.get({id: $stateParams.id});
     vm.messages = MessageThread.get({id: $stateParams.id});
   }
-  $rootScope.$on('suggestionAdded', () => vm.show());
+
+  function updateSuggestions() {
+    Group.get({ id: $stateParams.id })
+      .$promise
+      .then(group => {
+        vm.group.suggestions = group.suggestions;
+      });
+  }
 
   function postMessage() {
     MessageThread.get({id: $stateParams.id})
@@ -36,6 +45,6 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
         });
       });
   }
-
-  // return vm.todos[$stateParams.id];
+  
+  $rootScope.$on('suggestionAdded', () => vm.updateSuggestions());
 }
