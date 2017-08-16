@@ -8,7 +8,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $stateProvider
   .state('landingPage', {
-    url: '/landingpage',
+    url: '/',
     templateUrl: '/js/views/landingpage.html',
     controller: 'LandingPageCtrl',
     controllerAs: 'landingPage'
