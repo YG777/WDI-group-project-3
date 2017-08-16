@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 
-<h1>New Group</h1>
-<form ng-submit="groups.new()">
-  <div>
-    <input type="text" name="name" ng-model="groups.group.name" placeholder="name">
-  </div>
-  <div>
-    <input type="text" name="text" ng-model="groups.group.organization" placeholder="organization">
-  </div>
-  <input type="submit" name="" value="Submit">
+
+
+
+<form class="pure-form pure-form-stacked" ng-submit="groups.new()">
+    <fieldset>
+        <legend>Create a new Group</legend>
+
+        <label for="name">Group Name</label>
+        <input id="name" type="text" name="name" ng-model="groups.group.name" placeholder="Add your group name" >
+        <span class="pure-form-message">This is a required field.</span>
+
+        <label for="location">Location</label>
+        <input id="location" type="text" ng-model="groups.group.location" placeholder="Where is your group based?">
+
+        <label for="groupPic">Group Picture</label>
+        <input id="groupPic" type="text" ng-model="groups.group.groupPic" placeholder="Post a photo of your group?">
+
+        <button type="submit" class="pure-button pure-button-primary">Lets Eat!</button>
+    </fieldset>
 </form>

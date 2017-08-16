@@ -52,6 +52,7 @@ border: 1px solid black;
   text-align: center;
   height: 100vh;
 
+
   // background-color: #BC7C9C;
   // margin-left: 250px;
   // margin-right: 100px;
@@ -64,17 +65,37 @@ border: 1px solid black;
   align-items: center;
   display: flex;
   justify-content: center;
+  max-width: 768px;
+margin: 0 auto !important;
+float: none !important;
+display: -flexbox;
+align-content: flex-start;
+justify-content: center;
 }
 
 .groupContainer {
-  border: 2px solid black;
+  // border: 2px solid black;
   width: 250px;
   height: 250px;
   list-style-type: none;
   padding: 8px;
   margin: 10px;
   position: relative;
+  color: white;
+  display: inline-block;
+  text-decoration: none !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 20%;
 }
+
+.whiteText{
+color: white;
+}
+
+
 
 .groupImage{
   width: 100px;
