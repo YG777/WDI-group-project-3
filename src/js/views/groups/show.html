@@ -37,13 +37,13 @@
     </div>
 
 
-    <form class="pure-form pure-form-aligned" ng-submit="groups.postMessage()">
+    <form id="comments-form-holder" class="pure-form pure-form-aligned" ng-submit="groups.postMessage()">
       <fieldset>
         <div class="pure-control-group">
-          <label for="comments">Comments</label>
-          <input id="comments" type="text" placeholder="comments" ng-model="groups.newMessage.body">
+          <label  for="comments">Comments</label>
+          <input type="text" placeholder="comments" ng-model="groups.newMessage.body">
         </div>
-        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        <button type="submit" id="comments-btn" class="pure-button pure-button-primary">Submit</button>
       </fieldset>
     </form>
   </aside>
