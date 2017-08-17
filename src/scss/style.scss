@@ -301,3 +301,36 @@ margin: 2% 5%;
 .fl-r {
   float: right;
 }
+
+.suggestionBar{
+  position: absolute;
+  bottom: 50px;
+  margin-left: 25%;
+  width: 400px;
+  text-align: center;
+  height: 30px;
+}
+
+.suggestionBox{
+  // background-color: blue;
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  right: 200px;
+  bottom: 20px;
+  left: 15%;
+
+}
+
+.suggestionBubbles{
+  margin: 5px;
+  // border: 1px solid black;
+  display: inline-block;
+  padding: 5px;
+  // width: 70px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: #E54B29;
+  opacity: 0.6;
+
+}

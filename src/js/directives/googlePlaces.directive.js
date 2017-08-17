@@ -7,7 +7,7 @@ function googlePlaces($window, Group, $stateParams, $rootScope, CurrentUserServi
   const directive = {
     restrict: 'E',
     replace: true,
-    template: '<input style="width: inherit" type="text" id="google-places" />',
+    template: ' <input style="width: inherit" type="text"  id="google-places" />',
     scope: {
       center: '='
     },
