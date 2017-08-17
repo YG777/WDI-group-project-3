@@ -10,6 +10,7 @@ html{
 
 google-places{
   display: inline-block;
+  bottom: 100px;
 }
 
 a {
@@ -47,7 +48,7 @@ a {
 {
     position:fixed;
     display:block;
-    margin-top: -190px;
+    margin-top: -210px;
 }
 
 .main-c {
@@ -365,24 +366,27 @@ li {
 }
 
 .suggestionBar{
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 25px;
   padding: 1%;
-  margin-left: 25%;
-  width: 400px;
+  display: inline-block;
+  width: 200px;
   text-align: center;
-  height: 30px;
+  height: 9px;
+  align-items: center;
+  right: 700px;
+  border: 1px solid #E54B29;
+
 }
 
 .suggestionBox{
-  // background-color: blue;
-  width: 800px;
-  height: 500px;
-  position: absolute;
-  right: 200px;
-  bottom: 20px;
-  left: 15%;
-
+  // border: 1px solid black;
+  // width: 800px;
+  height: inherit;
+  // position: absolute;
+  // right: 190px;
+  // bottom: 75px;
+  // left: 17%;
 }
 
 .suggestionBubbles{
@@ -395,7 +399,42 @@ li {
   border-radius: 7px;
   background-color: #E54B29;
   opacity: 0.6;
+}
 
+.suggestionName{
+  color: white
+}
+
+.suggestionInfo{
+  // border: 1px solid black;
+  width: 190px;
+  height: 90vh;
+  padding: 5px;
+  padding-left: 9px;
+  margin: 5px;
+  bottom: 75px;
+  border-radius: 5px;
+  background-color: rgba(229,47,27,0.5);
+}
+
+@media (min-height:700px) {
+  .suggestionInfo {
+    height: inherit;
+  }
+}
+
+.showButtons{
+  position: relative;
+  // top: 380px;
+}
+
+.groupPicShow {
+  border: 7px solid rgba(255,255,255,.85);
+  outline-width: thick;
+  outline-color: black;
+  margin-top: 15px;
+  width: 172px;
+  // height: 175px;
 }
 
 .join-group-btn {
