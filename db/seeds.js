@@ -29,7 +29,7 @@ User.create([{
     admin: users[0]._id,
     members: [users[0]._id, users[1]._id],
     location: 'London',
-    groupPic: 'https://thecitylane.com/wp-content/uploads/2015/06/Katsu03.jpg'
+    groupPic: 'http://hyhoi.com/wp-content/uploads/2014/04/trade-commercial-street-spitalfields-coffee-shop-cafe-cake-1.jpg'
   },
   {
     name: 'WDI Lunch!',
@@ -43,8 +43,8 @@ User.create([{
     admin: users[0]._id,
     members: [users[0]._id, users[1]._id],
     location: 'London',
-    groupPic: 'https://thecitylane.com/wp-content/uploads/2015/06/Katsu03.jpg'
-  
+    groupPic: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/20280553_1642948312443112_7213921456998578201_o.jpg?oh=1b989760d47cc328585f59d5a06a0cee&oe=5A1FF2B2'
+
   }]);
 })
 .then(groups => {

@@ -1,22 +1,24 @@
-<!DOCTYPE html>
-
-
-
-
-<form class="pure-form pure-form-stacked" ng-submit="groups.new()">
-    <fieldset>
-        <legend>Create a new Group</legend>
-
-        <label for="name">Group Name</label>
-        <input id="name" type="text" name="name" ng-model="groups.group.name" placeholder="Add your group name" >
-        <span class="pure-form-message">This is a required field.</span>
-
-        <label for="location">Location</label>
-        <input id="location" type="text" ng-model="groups.group.location" placeholder="Where is your group based?">
-
-        <label for="groupPic">Group Picture</label>
-        <input id="groupPic" type="text" ng-model="groups.group.groupPic" placeholder="Post a photo of your group?">
-
-        <button type="submit" class="pure-button pure-button-primary">Lets Eat!</button>
-    </fieldset>
-</form>
+<section class="pure-g-r off-white-bg height-fixed">
+  <div class="pure-u-1-3"></div>
+  <div class="pure-u-1-3">
+    <form class="pure-form pure-form-stacked form-card" ng-submit="groups.new()">
+      <fieldset>
+        <legend><p class="main-c">Create a new Group</p></legend>
+        <div class="form-input-padng">
+          <label for="name">Group Name</label>
+          <input class="form-input accent-c" id="name" type="text" name="name" ng-model="groups.group.name" placeholder="Add your group name" >
+          <span class="pure-form-message main-c">This is a required field.</span>
+        </div>
+        <div class="form-input-padng">
+          <label for="location">Location</label>
+          <input class="form-input accent-c" id="location" type="text" ng-model="groups.group.location" placeholder="Where is your group based?">
+        </div>
+        <div class="form-input-padng">
+          <label for="groupPic">Group Picture</label>
+          <input class="form-input accent-c" id="groupPic" type="text" ng-model="groups.group.groupPic" placeholder="Post a photo of your group?">
+        </div>
+        <button type="submit" class="pure-button accent-c">Lets Eat!</button>
+      </fieldset>
+    </form>
+  </div>
+</section>

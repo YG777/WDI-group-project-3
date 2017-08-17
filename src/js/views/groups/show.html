@@ -10,35 +10,31 @@
     </div>
 
 
-      <div class="suggestionBox">
-        <ul>
-          <li class="suggestionBubbles" ng-repeat="suggestion in groups.group.suggestions"  value="Add">
-            <a ng-click="groups.upvote(suggestion)" ng-show="{{suggestion.userVotes.indexOf(groups.currentUserId) < 0}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
-            <a ng-click="groups.upvote(suggestion)" ng-hide="{{suggestion.userVotes.indexOf(groups.currentUserId) < 0}}"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
-            {{suggestion.votes}} <strong>{{suggestion.name}}</strong>
-          </li>
-        </ul>
-      </div>
+    <div class="suggestionBox">
+      <ul>
+        <li class="suggestionBubbles" ng-repeat="suggestion in groups.group.suggestions"  value="Add">
+          <a ng-click="groups.upvote(suggestion)" ng-show="{{suggestion.userVotes.indexOf(groups.currentUserId) < 0}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+          <a ng-click="groups.upvote(suggestion)" ng-hide="{{suggestion.userVotes.indexOf(groups.currentUserId) < 0}}"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
+          {{suggestion.votes}} <strong>{{suggestion.name}}</strong>
+        </li>
+      </ul>
+    </div>
 
-  <div class="suggestionBar" >
+    <div class="suggestionBar" >
       <google-places></google-places>
     </div>
 
     <button class="pure-button" ui-sref="groupsEdit({id: groups.group.id})">Edit</button>
     <button class="pure-button" ><a ui-sref="groupsIndex">Back</a></button>
-
-
-
-
-
   </section>
 
-
   <aside id="showsidecontainer" class="pure-u-1-4 fullpg-app">
-
     <div id="message-thread" class="message-thread" scroll-glue force-glue>
+      <div class="message-row" ng-show="groups.messages.messages.length === 0">
+        <p class="message"><small>Grubbable</small><br>Send your group a message!</p>
+      </div>
       <div ng-repeat="message in groups.messages.messages" class="message-row">
-        <p ng-class="main.user.id === message.user.id ? 'current-user-messge' : 'message'" ><small>{{message.user.name}}<br></small>{{message.body}}</p>
+        <p ng-class="main.user.id === message.user.id ? 'current-user-messge' : 'message'" ><small>{{message.user.name}}</small><br>{{message.body}}</p>
       </div>
     </div>
 

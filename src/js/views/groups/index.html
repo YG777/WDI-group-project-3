@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-
-<div class="groupIndexContainer">
-  <a ui-sref="groupsNew"><i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
-  <ul class="allGroupContainers pure-g-r">
-    <li ng-repeat="group in groups.all" ng-style="{'background-image':'url({{group.groupPic}})'}"  class= "groupContainer pure-u-1-4" >
-      <div class="groupInfo">
-        <div class="extraInfo" ng-class="{'show-extraInfo':hovering}"
-        ng-mouseenter="hovering=true"
-        ng-mouseleave="hovering=false">
-        <a class="whiteText" ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
-        <p>{{group.location}}</p>
-        <p><i class="fa fa-lg fa-star faa-burst animated" aria-hidden="true"></i><strong>Top current vote :</strong>  </p>
+<div class="off-white-bg pure-g-r overflow-auto">
+  <div class="pure-u-2-24"></div>
+  <div class="groupIndexContainer pure-u-20-24">
+    <ul class="allGroupContainers pure-g-r">
+      <li ng-repeat="group in groups.all" ng-style="{'background-image':'url({{group.groupPic}})'}" class="groupContainer pure-u-1-4">
+        <a class="join-group-btn accent-c" ng-click="groups.joinGroup(group.id)"><i class="fa fa-plus-square-o fa-3x" aria-hidden="true"></i></a>
+        <div ui-sref="groupsShow({ id: group.id })" class="groupInfo">
+          <div class="extraInfo" ng-class="{'show-extraInfo':hovering}"
+          ng-mouseenter="hovering=true"
+          ng-mouseleave="hovering=false">
+          <a class="whiteText" ui-sref="groupsShow({ id: group.id })">{{group.name}}<span class="fl-r"><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+          <p>{{group.location}}</p>
+          <p><i class="fa fa-lg fa-star faa-burst animated" aria-hidden="true"></i> <strong>Top current vote :</strong></p>
+        </div>
       </div>
-
-    </div>
-    <div class="groupIndexButtons">
-      <button class="pure-button pure-button-primary" ng-click="groups.joinGroup(group.id)">Join</button>
-      <button class="pure-button" ng-click="groups.delete(group)">Delete</button>
-    </div>
-  </li>
-</ul>
+      <div class="groupIndexButtons">
+        <button class="pure-button" ng-click="groups.delete(group)">Delete</button>
+      </div>
+      </li>
+      <li class="groupContainer pure-u-1-4 groupContainerLineHeight"><a ui-sref="groupsNew" class="accent-c"><span class="large">New Group</span> <i class="fa fa-plus fa-3x" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </div>
 </div>

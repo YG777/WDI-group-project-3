@@ -25,15 +25,16 @@ a {
   width: 74%;
   // border: 1px solid black;
 }
+#showsidecontainer{
+  width: 25%;
+  // border: 1px solid black;
+}
 
 .fullpg-app {
   height: 92vh
 }
 
-#showsidecontainer{
-  width: 25%;
-  // border: 1px solid black;
-}
+
 
 .pac-container:after {
     /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
@@ -79,22 +80,33 @@ a {
 .groupIndexContainer{
   text-align: center;
   height: 100vh;
+  // width: 100%;
+  margin: 0;
   background-color: #FBF9F8;
 }
 
+.groupContainerLineHeight {
+  line-height: 300px;
+  padding: 10%;
+  background-color: darken(#FBF9F8, 10%);
+}
+
 .allGroupContainers {
-  align-items: center;
+  padding: 10px;
   margin: 0 auto !important;
   display: inline-block;
   background-color: #FBF9F8;
 }
 
 .groupContainer {
+  box-shadow: 0 0 5px black;
+  cursor: pointer;
+  // border: 1px solid black;
   width: 300px;
   height: 300px;
   list-style-type: none;
   padding: 8px;
-  margin: 20px;
+  margin: 15px;
   margin-top: 40px;
   position: relative;
   color: white;
@@ -108,12 +120,13 @@ a {
 }
 
 .groupInfo{
-  background-color: #C14953;
+  // background-color: red;
   height: 100px;
-  width: 318px;
+  width: inherit;
   position: absolute;
   top: 213px;
-  right: 0px;
+  right: 0;
+  left: 0;
   padding-top: 3px;
   text-align: left;
   opacity: 0.8;
@@ -129,9 +142,6 @@ padding-left: 5px;
 .extraInfo {
   color: rgba(255,255,255,1);
   background: black;
-  background: linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,0.4));
-  background: -webkit-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,0.4));
-  background: -moz-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,0.4));
   padding: 10px;
   line-height:28px;
   text-align: justify;
@@ -139,15 +149,16 @@ padding-left: 5px;
   bottom: 0;
   margin: 0;
   height: 30px;
-  width: 318px;
-  opacity: 0.7;
-  transition: height .5s;
-  -webkit-transition: height .5s;
-  -moz-transition: height .5s;
+  overflow: hidden;
+  width: 297px;
+  opacity: 0.85;
+  transition: height .2s;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
 }
 
 .show-extraInfo {
-  height: 180px;
+  height: 200px;
 }
 
 .fa-star{
@@ -291,8 +302,6 @@ li {
   }
 }
 
-// hello
-
 .messages-input-div {
   position: absolute;
   padding-bottom: 0.75%;
@@ -334,6 +343,13 @@ li {
 
 .height-fixed {
   height: 100vh;
+}
+.clear {
+  clear: both;
+}
+
+.overflow-auto{
+  overflow: auto;
 }
 
 .form-input {
@@ -380,4 +396,9 @@ li {
   background-color: #E54B29;
   opacity: 0.6;
 
+}
+
+.join-group-btn {
+  float: right;
+  z-index: 1;
 }
