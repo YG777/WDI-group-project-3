@@ -32,7 +32,7 @@
 
     <div id="message-thread" class="message-thread" scroll-glue force-glue>
       <div ng-repeat="message in groups.messages.messages" class="message-row">
-        <p ng-class="main.user.id === message.user.id ? 'current-user-messge' : ''" ><small>{{message.user.name}}<br></small>{{message.body}}</p>
+        <p ng-class="main.user.id === message.user.id ? 'current-user-messge' : 'message'" ><small>{{message.user.name}}<br></small>{{message.body}}</p>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
       <form id="messages-form-holder" class="pure-form" ng-submit="groups.postMessage()">
         <fieldset>
           <input type="text" placeholder="write message here..." ng-model="groups.newMessage.body">
-          <button id="messages-btn" class="pure-button pure-button-primary"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+          <button id="messages-btn" class="pure-button accent-c no-border-r"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
         </fieldset>
       </form>
     </div>
