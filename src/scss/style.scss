@@ -23,8 +23,9 @@ a {
 }
 
 #showmaincontaner{
-width: 74%;
-border: 1px solid black;
+  height: 94vh;
+  width: 74%;
+  border: 1px solid black;
 }
 
 #showsidecontainer{
@@ -242,14 +243,33 @@ li {
   margin: 0
 }
 
+.message-row>p,{
+background-color: yellow;
+padding: 1% 3%;
+display: inline-block;
+border: 1px solid black;
+margin: 2% 5%;
+}
 .current-user-messge {
   float: right;
-  display: block;
 }
 
 .message-thread {
-  height: 400px;
+  height: 78vh;
   overflow: scroll;
+}
+
+#comments-form-holder {
+  padding-left: 3%;
+  padding-right: 3%;
+      label {
+    text-align: left;
+    padding-left: 3%;
+  }
+  input {
+    width: 100%;
+    height: 5vh;
+  }
 }
 
 .ending-padding {
