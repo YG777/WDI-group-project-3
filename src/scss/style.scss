@@ -109,19 +109,19 @@ border: 1px solid black;
 //   opacity: 0.8;
 // }
 
-.whiteText{
+.whiteText {
 color: white;
 font-weight: bold;
 font-size: 20px;
 padding-left: 5px;
 }
 
-.extraInfo{
+.extraInfo {
   color: rgba(255,255,255,1);
   background: black;
-  background: linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,.4));
-  background: -webkit-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,.4));
-  background: -moz-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,.4));
+  background: linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,0.4));
+  background: -webkit-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,0.4));
+  background: -moz-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,0.4));
   padding: 10px;
   line-height:28px;
   text-align: justify;
@@ -136,8 +136,6 @@ padding-left: 5px;
   -moz-transition: height .5s;
 }
 
-<<<<<<< HEAD
-=======
 .show-extraInfo {
   height: 180px;
 }
@@ -147,7 +145,6 @@ padding-left: 5px;
   size: 30px;
 }
 
->>>>>>> development
 .groupImage{
   width: 100px;
   height: 100px;
