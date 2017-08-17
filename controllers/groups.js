@@ -26,18 +26,22 @@ function groupsShow(req, res) {
 function groupsCreate(req, res) {
   Group.create(req.body)
     .then(data => {
-      if (!data) return res.status(404).json({ message: 'Error: Not Valid.' });
-      res.status(201).json(data);
+      if (!data) {
+        return res.status(400).json({ message: 'Error: Not Valid.' });
+      }
       const messageThreadCreationObject = {group: data.id};
       return MessageThread.create(messageThreadCreationObject)
         .then(data => {
-          if (!data) return res.status(404).json({ message: 'Error: Not Valid.' });
+          if (!data) {
+            return res.status(400).json({ message: 'Error: Not Valid.' });
+          }
           res.status(201).json(data);
         });
     })
-    .catch(err => res.status(500).json(err));
+    .catch(err => {
+      res.status(500).json(err);
+    });
 }
-
 function groupsUpdate(req, res) {
   Group.findByIdAndUpdate(req.params.id, req.body)
     .exec()
@@ -47,7 +51,6 @@ function groupsUpdate(req, res) {
     })
     .catch(err => res.status(500).json(err));
 }
-
 function groupsDelete(req, res) {
   Group.findByIdAndRemove(req.params.id)
     .exec()
