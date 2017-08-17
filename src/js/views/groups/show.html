@@ -29,8 +29,10 @@
 
 
   <aside id="showsidecontainer" class="pure-u-1-4 fullpg-app">
-
     <div id="message-thread" class="message-thread" scroll-glue force-glue>
+      <div class="message-row" ng-show="groups.messages.messages.length === 0">
+        <p class"message"><small>Grubbable<br></small>Send a message to your group!</p>
+      </div>
       <div ng-repeat="message in groups.messages.messages" class="message-row">
         <p ng-class="main.user.id === message.user.id ? 'current-user-messge' : 'message'" ><small>{{message.user.name}}<br></small>{{message.body}}</p>
       </div>
