@@ -1,22 +1,39 @@
 
+<section class="pure-g-r off-white-bg height-fixed">
+  <div class="pure-u-1-3"></div>
+  <div class="pure-u-1-3">
+    <form class="pure-form pure-form-stacked form-card" ng-submit="register.register()">
+      <fieldset>
+        <legend><p class="main-c">Sign up to start polling!</p></legend>
 
-<form class="pure-form pure-form-stacked" ng-submit="register.register()">
-  <fieldset>
-    <legend>Sign up to start polling!</legend>
-
-    <label for="name">Your Name</label>
-    <input id="name" type="text" name="name" ng-model="register.user.name" placeholder="Name" >
-
-    <br>
-    <label for="email">Email</label>
-    <input id="email" type="email" ng-model="register.user.email" placeholder="Email">
-    <br>
-    <label for="password">Password</label>
-    <input id="password" type="password" ng-model="register.user.password" placeholder="Password">
-    <br>
-    <label for="passwordConfirmation"> Confirm Password</label>
-    <input id="passwordConfirmation" type="password" ng-model="register.user.passwordConfirmation" placeholder="Confirm Password">
-    <br>
-    <button type="submit" class="pure-button pure-button-primary">Get Started!</button>
-  </fieldset>
-</form>
+        <div class="form-input-padng">
+          <label for="name">Your Name</label>
+          <input class="form-input accent-c" id="name" type="text" name="name" ng-model="register.user.name" placeholder="Name" >
+        </div>
+        <div class="form-input-padng">
+          <label for="email">Email</label>
+          <input class="form-input accent-c" id="email" type="email" ng-model="register.user.email" placeholder="Email">
+        </div>
+        <div class="form-input-padng">
+          <label for="password">Password</label>
+          <input class="form-input accent-c" id="password" type="password" ng-model="register.user.password" placeholder="Password">
+        </div>
+        <div class="form-input-padng">
+          <label for="passwordConfirmation"> Confirm Password</label>
+          <input class="form-input accent-c" id="passwordConfirmation" type="password" ng-model="register.user.passwordConfirmation" placeholder="Confirm Password">
+        </div>
+        <div class="form-input-padng">
+          <button type="submit" class="pure-button">Get Started!</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
+<footer class="landing-p-sect-padng off-white-bg">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3"></div>
+    <div class="pure-u-1-3 text-center landing-p-sect-padng">
+      <p class="accent-c">Grubbable 2017</p>
+    </div>
+  </div>
+</footer>
