@@ -1,10 +1,15 @@
-<h1>Login</h1>
-<form ng-submit="login.login()">
-  <div>
-    <input type="email" name="email" ng-model="login.user.email" placeholder="Email">
-  </div>
-  <div>
-    <input type="password" name="password" ng-model="login.user.password" placeholder="Password">
-  </div>
-  <input type="submit" name="" value="Submit">
+
+
+<form class="pure-form pure-form-stacked" ng-submit="login.login()">
+  <fieldset>
+    <legend>Log in to start polling!</legend>
+    <br>
+    <label for="email">Email</label>
+    <input id="email" type="email" ng-model="login.user.email" placeholder="Email">
+    <br>
+    <label for="password">Password</label>
+    <input id="password" type="password" ng-model="login.user.password" placeholder="Password">
+    <br>
+    <button type="submit" class="pure-button pure-button-primary">Log in!</button>
+  </fieldset>
 </form>

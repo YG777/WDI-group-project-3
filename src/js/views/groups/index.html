@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 
-<div class="groupIndexContainer pure-g-r">
-  <h1>Groups</h1>
-  <div class="allGroupContainers">
-    <div ng-repeat="group in groups.all">
-
-      <div ng-style="{'background-image':'url({{group.groupPic}})'}"  class= "groupContainer" >
-        <div class="pure-u-1-3">
-          <a ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
-          <p>{{group.location}}</p>
-           <!-- <img class="groupImage" src="{{group.groupPic}}" alt=""> -->
-          <div class="groupIndexButtons">
-            <!-- <div class="button-group"> -->
-            <button class="pure-button pure-button-primary" ng-click="groups.joinGroup(group.id)">Join</button>
-            <button class="pure-button " ng-click="groups.delete(group)">Delete</button>
-            <!-- </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+<div class="groupIndexContainer">
+<br>
 <button class="pure-button" ui-sref="groupsNew">Create a new Group</button>
 
+  <ul class="allGroupContainers pure-g-r">
+    <li ng-repeat="group in groups.all" ng-style="{'background-image':'url({{group.groupPic}})'}"  class= "groupContainer pure-u-1-3" >
+      <div class="groupInfo">
+        <a class="whiteText" ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
+        <p>{{group.location}}</p>
+       <p><i class="fa fa-lg fa-star faa-burst animated" aria-hidden="true"></i><strong>Top current vote :</strong>  </p>
+      </div>
+
+      <div class="groupIndexButtons">
+        <button class="pure-button pure-button-primary" ng-click="groups.joinGroup(group.id)" >Join</button>
+        <button class="pure-button" ng-click="groups.delete(group)">Delete</button>
+      </div>
+    </li>
+  </ul>
+  <div>
   </div>
 </div>

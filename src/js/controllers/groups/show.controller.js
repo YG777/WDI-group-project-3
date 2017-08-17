@@ -5,14 +5,17 @@ angular
 GroupsShowCtrl.$inject = ['$stateParams', 'Group', 'MessageThread', '$rootScope', 'CurrentUserService'];
 function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentUserService){
   const vm = this;
+  vm.currentUserName = CurrentUserService.currentUser.name;
   vm.currentUserId = CurrentUserService.currentUser.id;
   vm.show = show;
   vm.upvote = upvote;
   vm.updateSuggestions = updateSuggestions;
   vm.postMessage = postMessage;
   vm.newMessage = {user: vm.currentUserId};
+  vm.topVote = topVote;
 
   vm.show();
+  vm.topVote();
 
   function upvote(suggestion) {
     const index = vm.group.suggestions.indexOf(suggestion);
@@ -35,6 +38,14 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
     }
   }
 
+  function topVote(){
+    Array.max = function( userVotes ){
+      return Math.max.apply( Math, userVotes );
+    };
+    console.log(topVote);
+
+  }
+
   function show() {
     Group.get({id: $stateParams.id}, group => {
       group.suggestions.sort((a, b) => {
@@ -44,6 +55,13 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
     });
 
     vm.messages = MessageThread.get({id: $stateParams.id});
+  }
+
+  scrollbottom();
+
+  function scrollbottom() {
+    const messageThread = document.getElementById('message-thread');
+    messageThread.scrollTop = messageThread.scrollHeight;
   }
 
   function updateSuggestions() {
@@ -65,11 +83,13 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
       MessageThread.update({id: messageThread.id}, vm.newMessage)
       .$promise
       .then(() => {
+        vm.newMessage.user = {name: vm.currentUserName, id: vm.currentUserId};
         vm.messages.messages.push(vm.newMessage);
         vm.newMessage = {user: vm.currentUserId};
       });
     });
   }
+
 
   $rootScope.$on('suggestionAdded', () => vm.updateSuggestions());
 }
