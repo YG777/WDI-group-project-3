@@ -275,15 +275,16 @@ li {
   border-top-left-radius: 2%;
   border-top-right-radius: 2%;
   background-color: darken(#FBF9F8, 5%);
-  border-bottom: 0.5px solid #E54B29;
   // background-color: red;
-  height: 80vh;
+  height: 90vh;
   overflow: scroll;
 }
 
 .messages-input-div {
+  border-top: 0.5px solid #E54B29;
+  background-color: white;
   position: absolute;
-  padding-bottom: 0.75%;
+  padding: 0.75% 0;
   bottom: 0;
   width: inherit;
   text-align: center;
