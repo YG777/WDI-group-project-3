@@ -13,6 +13,11 @@ function GroupsIndexCtrl( Group, User, CurrentUserService) {
   vm.index();
   function index() {
     Group.query(data => {
+      vm.all.forEach(group => {
+        group.suggestions.sort((a, b) => {
+          b.votes - a.votes;
+        });
+      });
       vm.all = data;
     });
   }

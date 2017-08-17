@@ -13,9 +13,7 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
   vm.postMessage = postMessage;
   vm.newMessage = {user: vm.currentUserId};
 
-
   vm.show();
-
 
   function upvote(suggestion) {
     const index = vm.group.suggestions.indexOf(suggestion);
