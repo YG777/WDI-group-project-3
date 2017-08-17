@@ -16,7 +16,7 @@
 
 
     <div class="suggestionBox pure-u-3-4">
-      <h1 class="accent-c accent-border-bottom">Current Top Suggestion: {{groups.group.suggestions[0].name}} &#x1F3C6</h1>
+      <h1 class="accent-c accent-border-bottom fw-lgt">Current Top Suggestion: {{groups.group.suggestions[0].name}} &#x1F3C6</h1>
       <ul>
         <li ng-click="groups.upvote(suggestion)" class="suggestionBubbles" ng-repeat="suggestion in groups.group.suggestions"  value="Add">
           <a ng-show="{{suggestion.userVotes.indexOf(groups.currentUserId) < 0}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
