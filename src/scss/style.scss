@@ -9,8 +9,6 @@ html{
 }
 
 google-places{
-  height: 300px;
-  width: 300px;
   display: inline-block;
 }
 
@@ -42,6 +40,13 @@ a {
 
     background-image: none !important;
     height: 0px;
+}
+
+.pac-container
+{
+    position:fixed;
+    display:block;
+    margin-top: -190px;
 }
 
 .main-c {
@@ -345,7 +350,8 @@ li {
 
 .suggestionBar{
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
+  padding: 1%;
   margin-left: 25%;
   width: 400px;
   text-align: center;
