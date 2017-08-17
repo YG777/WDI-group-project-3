@@ -73,67 +73,89 @@ border: 1px solid black;
 }
 
 .allGroupContainers {
-
   align-items: center;
-  // display: flex;
-  // justify-content: center;
-  // max-width: 768px;
   margin: 0 auto !important;
   display: inline-block;
   background-color: #FBF9F8;
 }
 
 .groupContainer {
-  // border: 2px solid black;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   list-style-type: none;
   padding: 8px;
-
   margin: 20px;
   margin-top: 40px;
   position: relative;
-  color: black;
+  color: white;
   display: inline-block;
   text-decoration: none !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  float: left;
 }
 
-.groupInfo{
-  background-color: #FDFFF5;
-  height: 100px;
-  width: 418px;
-  position: relative;
-  top: 310px;
-  right: 10px;
-  // border: 1px solid black;
-  padding-top: 3px;
-  text-align: left;
-}
+// .groupInfo{
+//   background-color: #C14953;
+//   height: 100px;
+//   width: 318px;
+//   position: absolute;
+//   top: 213px;
+//   right: 0px;
+//   padding-top: 3px;
+//   text-align: left;
+//   opacity: 0.8;
+// }
 
 .whiteText{
-color: black;
+color: white;
 font-weight: bold;
 font-size: 20px;
 padding-left: 5px;
 }
 
+.extraInfo{
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,.4));
+  background: -webkit-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,.4));
+  background: -moz-linear-gradient(bottom, rgba(229,75,41,1), rgba(229,75,41,.4));
+  padding: 10px;
+  line-height:28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  width: 318px;
+  opacity: 0.7;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+<<<<<<< HEAD
+=======
+.show-extraInfo {
+  height: 180px;
+}
+
 .fa-star{
-  color: #E54B29;
+  color: white;
   size: 30px;
 }
 
+>>>>>>> development
 .groupImage{
   width: 100px;
   height: 100px;
 }
 
 .groupIndexButtons{
-  top: 430px;
-  right: 125px;
+  top: 320px;
+  right: 80px;
   position: absolute;
   padding-bottom: 8px;
   // float: right;
