@@ -4,10 +4,13 @@
   <meta charset="utf-8">
   <base href="/">
   <title>Project 3</title>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvV2-lIr6kqI6Y3LrnhItDlSERzaL_R4&libraries=places"></script>
   <script src="https://use.fontawesome.com/c645ba6ef1.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link rel="stylesheet" href="font-awesome-animation.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Shrikhand" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -21,10 +24,10 @@
       <ul class="pure-menu-list">
         <!-- <li ng-show="main.user" class="pure-menu-item"><a ui-sref="usersIndex" class="pure-menu-link main-pure-menu-link main-c">Index</a></li> -->
         <li class="pure-menu-item">
-          <a ng-hide="main.user" ui-sref="landingPage" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Lunch it! </a>
+          <a ng-hide="main.user" ui-sref="landingPage" class="pure-menu-link brand" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Grubbable</a>
         </li>
         <li class="pure-menu-item">
-          <a ng-show="main.user" ui-sref="groupsIndex" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Lunch it!</a>
+          <a ng-show="main.user" ui-sref="groupsIndex" class="pure-menu-link brand" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Grubbable</a>
         </li>
         <li ng-show="main.user" class="pure-menu-item">
           <a ui-sref="groupsIndex" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Groups</a>
@@ -35,7 +38,7 @@
         <li ng-hide="main.user" class="pure-menu-item">
           <a ui-sref="login" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Login</a>
         </li>
-        <li ng-hide="main.user" id="logout" class=" pure-menu-item">
+        <li ng-hide="main.user" id="logout" class="pure-menu-item">
           <a ui-sref="register" class="pure-menu-link" ng-class="main.landingPage ? 'accent-pure-menu-link accent-c' : 'main-pure-menu-link main-c'">Register</a>
         </li>
       </ul>
@@ -43,5 +46,11 @@
   </header>
   <main ui-view></main>
 
+  <script>
+    $('li').on('click', function() {
+      console.log('hi');
+        $(this).toggleClass('.show-extraInfo');
+    });
+  </script>
 </body>
 </html>
