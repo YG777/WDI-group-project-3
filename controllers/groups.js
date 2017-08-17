@@ -35,7 +35,6 @@ function groupsCreate(req, res) {
           if (!data) {
             return res.status(400).json({ message: 'Error: Not Valid.' });
           }
-          
           res.status(201).json(data);
         });
     })
@@ -52,7 +51,6 @@ function groupsUpdate(req, res) {
     })
     .catch(err => res.status(500).json(err));
 }
-
 function groupsDelete(req, res) {
   Group.findByIdAndRemove(req.params.id)
     .exec()

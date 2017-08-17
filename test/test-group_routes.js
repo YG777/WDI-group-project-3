@@ -1,33 +1,21 @@
 const { api, expect } = require('./spec_helper');
 const Group = require('../models/group');
-// const User = require('../models/user');
 
-// const routes = require('../config/routes');
-//confirm that routes.route is called using the right values
-//is routes.route called with /register
 const testData = [{
   name: 'WDI Breakfast!',
   organization: 'GA WDI 28'
-  // admin: users[0]._id,
-  // members: [users[0]._id, users[1]._id]
 }, {
   name: 'WDI Lunch!',
   organization: 'GA WDI 28'
-  // members: [users[0]._id]
 }, {
   name: 'WDI PUB!',
   organization: 'GA WDI 28'
-  // admin: users[0]._id,
-  // members: [users[0]._id, users[1]._id]
 }];
 
 beforeEach((done) => {
-  // User.collection.drop();
-  // User.create(testData, done);
   Group.collection.drop();
   Group.create(testData, done);
 });
-
 
 describe('GET /api/groups', () => {
   it('should return a 200', function (done) {
@@ -80,7 +68,60 @@ describe('GET /api/groups/:id', () => {
     api
       .get(`/api/groups/${record.id}`)
       .expect(200, done);
-      //check the data is correct
   });
   
 });
+
+describe('GET /api/groups/:id/edit', () => {
+  
+  let record = null;
+  beforeEach((done) => {
+    Group.findOne({ name: 'WDI Lunch!' }, (err, group) => {
+      record = group;
+      done();
+    });
+  });
+  
+  it('should return a 200 response', (done) => {
+    api
+      .get(`/api/groups/${record.id}/edit`)
+      .expect(200, done);
+  });  
+});
+
+
+describe('DELETE /api/groups/:id', () => {
+  
+  let record = null;
+  beforeEach((done) => {
+    Group.findOne({ name: 'WDI PUB!' }, (err, group) => {
+      record = group;
+      done();
+    });
+  });
+  
+  it('should return 204', (done) => {
+    api
+      .delete(`/api/groups/${record.id}`)
+      .end((err, res) => {
+       
+        expect(res.status).to.equal(204);
+        done();
+      });
+  });
+  
+  it('should delete the group', (done) => {
+    api
+      .delete(`/api/groups/${record.id}`)
+
+      .end((err, res) => {
+        api
+          .get('/api/groups');
+        expect(res.text).to.not.contain('WDI PUB!');
+        done();
+      });
+  });
+});
+  
+
+
