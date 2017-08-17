@@ -1,5 +1,5 @@
 angular.module('group-proj')
-.controller('GroupsNewCtrl', GroupsNewCtrl);
+  .controller('GroupsNewCtrl', GroupsNewCtrl);
 
 GroupsNewCtrl.$inject = ['Group', '$state', 'CurrentUserService'];
 function GroupsNewCtrl(Group, $state, CurrentUserService) {
