@@ -38,10 +38,10 @@ a {
 }
 
 .pac-container:after {
-  /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
 
-  background-image: none !important;
-  height: 0px;
+    background-image: none !important;
+    height: 0px;
 }
 
 .main-c {
@@ -115,10 +115,10 @@ a {
 // }
 
 .whiteText {
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  padding-left: 5px;
+color: white;
+font-weight: bold;
+font-size: 20px;
+padding-left: 5px;
 }
 
 .extraInfo {
@@ -248,10 +248,10 @@ li {
   max-width: inherit;
   p {
     background-color: #FBF9F8;
-    padding: 2% 3%;
+    padding: 1% 3%;
     display: inline-block;
     margin: 2% 5%;
-    border-radius: 3%;
+    border-radius: 5%;
   }
 }
 
