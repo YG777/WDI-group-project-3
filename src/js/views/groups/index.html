@@ -5,27 +5,19 @@
   <ul class="allGroupContainers pure-g-r">
     <li ng-repeat="group in groups.all" ng-style="{'background-image':'url({{group.groupPic}})'}"  class= "groupContainer pure-u-1-4" >
       <div class="groupInfo">
-        <div class="extraInfo">
-          <a class="whiteText" ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
-          <p>{{group.location}}</p>
-          <p><i class="fa fa-lg fa-star faa-burst animated" aria-hidden="true"></i><strong>Top current vote :</strong>  </p>
-        </div>
+        <div class="extraInfo" ng-class="{'show-extraInfo':hovering}"
+        ng-mouseenter="hovering=true"
+        ng-mouseleave="hovering=false">
+        <a class="whiteText" ui-sref="groupsShow({ id: group.id })">{{group.name}}</a>
+        <p>{{group.location}}</p>
+        <p><i class="fa fa-lg fa-star faa-burst animated" aria-hidden="true"></i><strong>Top current vote :</strong>  </p>
+      </div>
 
-      </div>
-      <div class="groupIndexButtons">
-        <button class="pure-button pure-button-primary" ng-click="groups.joinGroup(group.id)">Join</button>
-        <button class="pure-button" ng-click="groups.delete(group)">Delete</button>
-      </div>
-    </li>
-  </ul>
+    </div>
+    <div class="groupIndexButtons">
+      <button class="pure-button pure-button-primary" ng-click="groups.joinGroup(group.id)">Join</button>
+      <button class="pure-button" ng-click="groups.delete(group)">Delete</button>
+    </div>
+  </li>
+</ul>
 </div>
-
-<script>
-  console.log('loaded');
-  setTimeout(function() {
-    $('li').on('click', function() {
-        $('.extraInfo').toggleClass('show-extraInfo');
-        console.log('hi');
-    });
-  }, 100);
-</script>
