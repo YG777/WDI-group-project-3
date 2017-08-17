@@ -280,6 +280,12 @@ li {
   height: 80vh;
   overflow: scroll;
 }
+@media (min-height: 600px) {
+  .message-thread {
+    height: 84vh
+  }
+}
+
 // hello
 
 .messages-input-div {
