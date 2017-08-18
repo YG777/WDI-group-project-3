@@ -2,10 +2,9 @@ angular
   .module('group-proj')
   .controller('GroupsIndexCtrl', GroupsIndexCtrl);
 
-GroupsIndexCtrl.$inject = ['Group', 'User', 'CurrentUserService', '$timeout'];
-function GroupsIndexCtrl( Group, User, CurrentUserService, $timeout) {
+GroupsIndexCtrl.$inject = ['Group', 'User', 'CurrentUserService'];
+function GroupsIndexCtrl( Group, User, CurrentUserService) {
   const vm = this;
-  vm.joinedGroup = false;
   vm.all = [];
   vm.index = index;
   vm.delete = groupDelete;
@@ -43,7 +42,6 @@ function GroupsIndexCtrl( Group, User, CurrentUserService, $timeout) {
         if (vm.currentGroupMembers.members.indexOf(vm.currentUser.id) >= 0) return console.log('Cant join a group twice');
         vm.currentGroupMembers.members.push(vm.currentUser.id);
         Group.update({ id: group.id }, vm.currentGroupMembers);
-        alertJoinedGroup();
       })
       .$promise
       .then(() => {
@@ -52,13 +50,6 @@ function GroupsIndexCtrl( Group, User, CurrentUserService, $timeout) {
         User.update({ id: vm.currentUser.id }, vm.currentUserGroups);
       });
     });
-  }
-
-  function alertJoinedGroup() {
-    vm.joinedGroup = true;
-    $timeout(() => {
-      vm.joinedGroup = false;
-    }, 5000);
   }
 
   function groupDelete(group) {

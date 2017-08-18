@@ -15,7 +15,6 @@ function LandingPageCtrl($interval, $rootScope) {
   function cycleMeals() {
     let index = 0;
     $interval(() => {
-      console.log('running', index, vm.meal);
       if (index === 4) index = 0;
       vm.meal = vm.meals[index];
       index++;
