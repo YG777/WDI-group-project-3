@@ -19,7 +19,7 @@ function LandingPageCtrl($interval, $rootScope) {
       if (index === 4) index = 0;
       vm.meal = vm.meals[index];
       index++;
-    }, 4000);
+    }, 2000);
   }
 
 

@@ -11,7 +11,8 @@ function GroupsIndexCtrl( Group, User, CurrentUserService, $timeout) {
   vm.delete = groupDelete;
   vm.joinGroup = joinGroup;
 
-  vm.index();
+
+
   function index() {
     Group.query(data => {
       vm.all.forEach(group => {
@@ -68,4 +69,5 @@ function GroupsIndexCtrl( Group, User, CurrentUserService, $timeout) {
         vm.index();
       });
   }
+  vm.index();
 }

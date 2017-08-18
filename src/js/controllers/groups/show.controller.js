@@ -13,6 +13,8 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
   vm.postMessage = postMessage;
   vm.newMessage = {user: vm.currentUserId};
 
+
+
   vm.show();
 
   function upvote(suggestion) {
@@ -84,4 +86,6 @@ function GroupsShowCtrl($stateParams, Group, MessageThread, $rootScope, CurrentU
 
 
   $rootScope.$on('suggestionAdded', () => vm.updateSuggestions());
+
+
 }

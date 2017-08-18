@@ -1,17 +1,24 @@
 <div class="pure-g-r">
   <section id="showmaincontaner" class="pure-u-1-3 fullpg-app" >
     <div class="suggestionInfo pure-u-1-4">
-      <div class="">
+      <div class="groupCard">
         <img src="{{groups.group.groupPic}}" alt="" class="groupPicShow">
-      </div>
       <h3>{{groups.group.name}}</h3>
-      <h4>{{groups.group.organization}}</h4>
-      <h4>Group Members</h4>
-      <ul >
-        <li ng-repeat="member in groups.group.members"> {{member.name}} </li>
-      </ul>
-      <button class="pure-button showButtons" ui-sref="groupsEdit({id: groups.group.id})">Edit</button>
-      <button class="pure-button showButtons" ><a ui-sref="groupsIndex">Back</a></button>
+      <!-- <h4>{{groups.group.organization}}</h4> -->
+      <div class="showButtons">
+        <a ui-sref="groupsEdit({id: groups.group.id})">Edit</a>
+        <a ui-sref="groupsIndex">Back</a>
+      </div>
+      </div>
+      <div class="showMembers">
+        <h3>Group Members</h3>
+        <ul >
+          <li ng-repeat="member in groups.group.members"> {{member.name}} </li>
+        </ul>
+      </div>
+
+
+
     </div>
 
 

@@ -2,12 +2,11 @@
   <div class="pure-u-2-24"></div>
   <div class="groupIndexContainer pure-u-20-24">
     <div>
-      <h3 class="accent-c join-alert" ng-show="groups.joinedGroup">Joined Group!</h3>
+      <h3 class="accent-c join-alert" ng-show="group.joinedGroup">Joined Group!</h3>
     </div>
     <ul class="allGroupContainers pure-g-r">
-
       <li ng-repeat="group in groups.all" ng-style="{'background-image':'url({{group.groupPic}})'}" class="groupContainer pure-u-1-4">
-        <a class="join-group-btn accent-c" ng-click="groups.joinGroup(group.id)"><i class="fa fa-plus-square-o fa-3x" aria-hidden="true"></i></a>
+        <a class="join-group-btn accent-c" ng-click="groups.joinedGroup(group.id)"><i class="fa fa-plus-square-o fa-3x" aria-hidden="true"></i></a>
         <div ui-sref="groupsShow({ id: group.id })" class="groupInfo">
           <div class="extraInfo" ng-class="{'show-extraInfo':hovering}" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
             <a class="whiteText" ui-sref="groupsShow({ id: group.id })">{{group.name}}<span class="fl-r"><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
@@ -15,9 +14,7 @@
             <p><i class="fa fa-lg fa-star faa-burst animated" aria-hidden="true"></i> <strong>Top current vote:<br> {{group.suggestions[0].name}}</strong></p>
           </div>
         </div>
-        <div class="groupIndexButtons">
-          <button class="pure-button" ng-click="groups.delete(group)">Delete</button>
-        </div>
+        <a class="delete" ng-click="groups.delete(group)">Delete</a>
       </li>
 
       <li class="groupContainer pure-u-1-4 groupContainerLineHeight"><a ui-sref="groupsNew" class="accent-c"><span class="large">New Group</span> <i class="fa fa-plus fa-3x" aria-hidden="true"></i></a>

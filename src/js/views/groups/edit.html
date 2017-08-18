@@ -1,10 +1,19 @@
-<h1>Edit Group</h1>
-<form ng-submit="groups.update()">
-  <div>
-    <input type="text" name="name" ng-model="groups.group.name" value="groups.group.name"placeholder="name">
-  </div>
-  <div>
-    <input type="text" name="text" ng-model="groups.group.organization" value="groups.group.organization"placeholder="organization">
-  </div>
-  <input type="submit" name="" value="Submit">
+
+
+<form class="pure-form pure-form-stacked form-card edit-form" ng-submit="groups.update()">
+  <fieldset>
+    <legend><p class="main-c">Change your Group's details!</p></legend>
+    <div class="form-input-padng">
+      <label for="name">Group Name</label>
+      <input class="form-input accent-c" id="email" type="email" ng-model="groups.group.name" placeholder="Group Name">
+    </div>
+    <div class="form-input-padng">
+      <label for="groupPic">Group Picture</label>
+      <input class="form-input accent-c" id="groupPic" type="text" ng-model="groups.group.groupPic" placeholder="Group Picture">
+    </div>
+    <div class="form-input-padng">
+      <button type="submit" class="pure-button">Edit</button>
+      <button type="submit" class="pure-button" ui-sref="groupsIndex">Back</button>
+    </div>
+  </fieldset>
 </form>

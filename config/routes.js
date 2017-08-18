@@ -20,11 +20,13 @@ routes.route('/users/:id')
 routes.route('/groups')
   .get(groups.index)
   .post(groups.create);
+
 routes.route('/groups/:id')
   .get(groups.show)
   .put(groups.update)
   .patch(groups.update)
   .delete(groups.delete);
+
 
 routes.route('/messages/:id')
   .get(messageThread.show)
