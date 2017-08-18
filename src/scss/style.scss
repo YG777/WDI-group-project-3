@@ -309,6 +309,12 @@ li {
   text-align: center;
 }
 
+@media (min-height: 700px) {
+  .messages-input-div {
+    padding-bottom: 0;
+  }
+}
+
 
 #messages-form-holder {
   input {
@@ -384,6 +390,12 @@ li {
   border-bottom: 1px solid #E54B29;
   height: 81vh;
   position: relative;
+}
+
+@media (min-height: 700px) {
+  .suggestionBox {
+    height: 85vh;
+  }
 }
 
 .accent-border-bottom {
