@@ -311,7 +311,7 @@ li {
 
 @media (min-height: 700px) {
   .messages-input-div {
-    padding-bottom: 0;
+    padding-bottom: 0.75%;
   }
 }
 
@@ -474,7 +474,7 @@ color: black;
 
   }
   width: 170px;
-  height: 480px;
+  height: 58vh;
   padding: 3px;
   background-color: rgba(229, 75, 41, 0.8);
   // background-color: #FBF9F8;
@@ -482,6 +482,12 @@ color: black;
   margin-top: 10px;
   color: white;
   overflow-y: scroll;
+}
+
+@media (min-height: 800px) {
+  .showMembers {
+    height: 62vh;
+  }
 }
 
 .groupPicShow {
