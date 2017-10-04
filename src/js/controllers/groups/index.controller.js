@@ -16,7 +16,7 @@ function GroupsIndexCtrl( Group, User, CurrentUserService) {
     Group.query(data => {
       vm.all.forEach(group => {
         group.suggestions.sort((a, b) => {
-          b.votes - a.votes;
+          return b.votes - a.votes;
         });
       });
       vm.all = data;
