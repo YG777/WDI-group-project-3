@@ -9,7 +9,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider
   .state('landingPage', {
     url: '/',
-    templateUrl: '/js/views/landingpage.html',
+    templateUrl: '/js/views/landingPage.html',
     controller: 'LandingPageCtrl',
     controllerAs: 'landingPage'
   })
