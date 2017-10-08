@@ -4,8 +4,6 @@
 
 ![splash](./readme-files/splash.png)
 
-[Open Grubbable Online](http://grubbable-app.herokuapp.com)
-
 Grubbable is a group polling app to help you and your friends decide where to go for lunch! (or the pub...) The app aims to help end those constant debates in the break room to finally end the gridlock on where to go eat that chicken ceasar wrap once and for all!
 
 ### Technologies used
